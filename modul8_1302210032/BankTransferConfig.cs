@@ -28,7 +28,17 @@ public class BankTransferConfig
 
     public void SetDefault()
     {
-        Console.WriteLine("default");
+        transfer tf = new transfer(25000000, 6500, 15000);
+        List<string> methods = new List<string>
+        {
+            "RTO (real-time)",
+            "SKN",
+            "RTGS",
+            "BI FAST"
+        };
+        confirmation confirmation = new confirmation("yes", "ya");
+
+        config = new Config("en", tf, methods, confirmation);
     }
 
     public void WriteConfigFile()
